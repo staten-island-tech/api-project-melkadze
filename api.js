@@ -33,7 +33,7 @@ const DOMStrings = {
         console.log(data[0].hwi.prs[0].mw)
         console.log(data[0].date)
         console.log(data[0])
-        console.log(data[0].suppl.examples)
+        console.log(data[1].def[1].sseq[0].[1])
     DOMStrings.displayName.innerText = data.term;
     DOMStrings.displayNum.innerText = data.id;
     DOMStrings.displayImageFront.src = data.sprites.front_default;
