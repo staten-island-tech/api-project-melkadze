@@ -38,11 +38,14 @@ body{
     text-align: center;
     margin: 0 auto;
     color: white;
-    background-color: none;
-    height: 20vh;
+    background-color: #fe8a71;
+    height: 15vh;
     font-size: 4rem;
     text-transform: uppercase;
-    letter-spacing: 1rem;
+	letter-spacing: 1rem;
+-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
+margin-top:2%;
 }
 
 .user-input{
