@@ -27,6 +27,7 @@ class UI {
     
     clearValues() {
         document.getElementById("city-form").reset();
+        console.log('eee')
     }
 
     displayCity(city){
