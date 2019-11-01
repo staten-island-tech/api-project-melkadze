@@ -1,37 +1,12 @@
-//word class
-class  Word {
-    constructor(name, definition, grammar, origin, yearCoined, synonyms, url){
-        this.name = name;
-        this.definition = definition;
-        this.grammar = grammar;
-        this.origin = origin;
-        this.yearCoined = yearCoined;
-        this.synonyms = synonyms;
-        this.url = url;
-    }
-
-    yearsExisting(yearCoined) {
-        return new Date().getUTCFullYear() - yearCoined;
-    }
-}
-
-
-
 //UI section: displaying & removing cities, and clearing fields
 class UI {
-
-    removeWord(e) {
-        if(e.parentElement.classList.contains('display-button')){
-            e.parentElement.parentElement.remove();
-        }
-    }
     
     clearValues() {
         document.getElementById("word-form").reset();
     }
 
     displayWord(word){
-        if (word.name === false || word.definition === false || word.grammar === false || word.origin === false || word.yearCoined === false || word.synonyms == false || word.URL === false) {
+        if (wordName === false) {
             alert('Please. The database requires your full effort.');
         } else {
     
@@ -56,19 +31,11 @@ class UI {
 
 document.getElementById('word-form').addEventListener('submit', function(e){
     //get values
-    const userName = document.querySelector('#name');
-    const userDefinition = document.querySelector('#definition');
-    const userGrammar = document.querySelector('#grammar');
-    const userorigin = document.querySelector('#origin');
-    const userYearCoined = document.querySelector('#yearCoined');
-    const usersynonyms = document.querySelector('#synonyms');
-    const userURL = document.querySelector('#image');
-
-    const word = new Word(userName.value, userDefinition.value, userGrammar.value, userorigin.value, userYearCoined.value, usersynonyms.value, userURL.value);
+    const wordName = document.querySelector('#name');
 
     const ui = new UI();
 
-    ui.displayWord(word);
+    ui.displayWord(wordName);
 
     ui.clearValues();
 
