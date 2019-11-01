@@ -33,9 +33,10 @@ const DOMStrings = {
         console.log(data[0].hwi.prs[0].mw)
         console.log(data[0].date)
         console.log(data[0])
-        console.log(data[1].def[1].sseq[0].[1])
-    DOMStrings.displayName.innerText = data.term;
-    DOMStrings.displayNum.innerText = data.id;
+        // console.log(data[1].def[1].sseq[0][1][1].dt[1][1][0].t)
+    // DOMStrings.displayName.innerText = data[0].hwi.prs[0].mw;
+    DOMStrings.displayName.innerText = data[0].meta.id;
+    DOMStrings.displayNum.innerText = data[0].shortdef;
     DOMStrings.displayImageFront.src = data.sprites.front_default;
     DOMStrings.displayImageBack.src = data.sprites.back_default;
     DOMStrings.displayImageShinyBack.src = data.sprites.back_shiny;
