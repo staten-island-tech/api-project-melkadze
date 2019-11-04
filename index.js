@@ -10,23 +10,21 @@ class UI {
             alert('Please. The database requires your full effort.');
         } else {
     
-        let html = '<div class="display-word"><div class="display-name"> %name% </div> <div class="display-definition"> %definition% </div> <div class="display-grammar">  %grammar% </div> <div class="display-origin"> %origin% </div> <div class="display-synonyms"> %synonyms% </div> <div class="display-yearsExisting"> %yearsExisting% </div> <div class="display-image"> <image src="%url%"> </div><div class="display-button"> <p class="btn">X</p> </div> </div>';
+        let html = '<div class="display-word"><div class="display-name"> %name% </div> <div class="display-definition"> %definition% </div> <div class="display-grammar">  %grammar% </div> <div class="display-origin"> %origin% </div> <div class="display-synonyms"> %synonyms% </div> <div class="display-yearsExisting"> %yearsExisting% </div> <div class="display-pronunciations"> %pronunciations% </div> <div class="display-button"> <p class="btn">X</p> </div> </div>';
 
         const display = document.querySelector('.display');
     
         let newHTML = html.replace('%name%', word.name);
         newHTML = newHTML.replace('%realName%', word.realName);
-        newHTML = newHTML.replace(' %grammar%', word.grammar);
+        newHTML = newHTML.replace('%grammar%', word.grammar);
         newHTML = newHTML.replace('%origin%', word.origin);
         newHTML = newHTML.replace('%synonyms%', word.synonyms);
         newHTML = newHTML.replace('%yearsExisting%', word.yearsExisting(word.yearCoined));
-        newHTML = newHTML.replace('%url%', word.url);
+        newHTML = newHTML.replace('%pronunciations%', word.pronunciations);
         display.insertAdjacentHTML('beforeend', newHTML);
         }
     }
 }
-
-
 
 
 document.getElementById('word-form').addEventListener('submit', function(e){
