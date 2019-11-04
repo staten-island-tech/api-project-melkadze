@@ -1,3 +1,5 @@
+
+
 const DOMStrings = {
   input: document.getElementById("pkmn-form"),
   name: document.getElementById("pokemon-name"),
@@ -60,5 +62,7 @@ function getPkmn() {
   });
 }
 getPkmn();
+
+console.log('eeeeeeeeeeee')
 
 // https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=f5a1330a-9bb9-4904-86ee-d1e087a29dcb

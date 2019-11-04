@@ -1,3 +1,7 @@
+import * as myModule from '/modules/my-module.js';
+
+
+
 //word class
 class  Word {
     constructor(name, definition, grammar, origin, yearCoined, synonyms, url){
