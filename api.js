@@ -21,10 +21,10 @@ function getPkmn() {
   DOMStrings.input.addEventListener("submit", async function(e) {
     e.preventDefault();
     try {
-      const dicResult = await fetch(
+      const dictResult = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${DOMStrings.name.value}?key=f5a1330a-9bb9-4904-86ee-d1e087a29dcb`
       );
-      const dictionary = await dicResult.json();
+      const dictionary = await dictResult.json();
       //console.log(data);
 
       const thesResult = await fetch(
@@ -40,11 +40,12 @@ function getPkmn() {
         console.log(dictionary[0].hwi.prs[0].mw);
         console.log(dictionary[0].date);
         console.log(thesaurus[0].meta.syns);
+        console.log(dictionary[0].fl)
         // console.log(data[1].def[1].sseq[0][1][1].dt[1][1][0].t)
         // DOMStrings.displayName.innerText = data[0].hwi.prs[0].mw;
         DOMStrings.displayName.innerText = thesaurus[0].meta.id;
         DOMStrings.displayNum.innerText = dictionary[0].shortdef;
-        DOMStrings.displayImageFront.src = data.sprites.front_default;
+        DOMStrings.displayImageFront.src =
         DOMStrings.displayImageBack.src = data.sprites.back_default;
         DOMStrings.displayImageShinyBack.src = data.sprites.back_shiny;
         DOMStrings.displayImageShinyFront.src = data.sprites.front_shiny;
@@ -55,7 +56,6 @@ function getPkmn() {
       displayPkmn(dictionary);
       DOMStrings.name.value = "";
     } catch (err) {
-      console.log(err);
     }
   });
 }
