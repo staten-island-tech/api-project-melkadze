@@ -45,7 +45,7 @@ function getPkmn() {
         // DOMStrings.displayName.innerText = data[0].hwi.prs[0].mw;
         DOMStrings.displayName.innerText = thesaurus[0].meta.id;
         DOMStrings.displayNum.innerText = dictionary[0].shortdef;
-        DOMStrings.displayImageFront.src =
+        DOMStrings.displayImageFront.src = dictionary[0].fl
         DOMStrings.displayImageBack.src = data.sprites.back_default;
         DOMStrings.displayImageShinyBack.src = data.sprites.back_shiny;
         DOMStrings.displayImageShinyFront.src = data.sprites.front_shiny;
