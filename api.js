@@ -49,13 +49,14 @@ function getPkmn() {
         DOMStrings.displayImageBack.src = data.sprites.back_default;
         DOMStrings.displayImageShinyBack.src = data.sprites.back_shiny;
         DOMStrings.displayImageShinyFront.src = data.sprites.front_shiny;
-        DOMStrings.type.textContent = dictionary[0].fl;
+        DOMStrings.type.textContent = dictionary[0].fl
         //console.log(data.types);
         console.log(data);
       };
       displayPkmn(dictionary);
       DOMStrings.name.value = "";
     } catch (err) {
+      // DOMStrings.displayName.innerText = `error`
     }
   });
 }
