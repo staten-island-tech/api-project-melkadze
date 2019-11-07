@@ -3,63 +3,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Georgian Database V2</title>
+    <title>Dictionary Database</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    
 </head>
 <body>
     <div class="banner">
         <h1 class="header">
-            Georgian City Database V2
+            Dictionary Database
         </h1>
     </div>
 
     <div class="user-input">
-        <form id="city-form">
-            <div class="city-form-input">
-                <label for="Name">Name</label>
+        <form id="word-form">
+            <div class="word-form-input">
+                <label for="name">Word</label>
                 <input type="text" id="name" class="text-box">
             </div>
-            <div class="city-form-input">
-                <label for="realName">Real Name</label>
-                <input type="text" id="realName" class="text-box">
+            <div class="word-form-input">
+                <label for="definition">Definition</label>
+                <input type="text" id="definition" class="text-box">
             </div>
-            <div class="city-form-input">
-                <label for="population">Population</label>
-                <input type="number" id="population" class="text-box">
+            <div class="word-form-input">
+                <label for="grammar">Part of Speech</label>
+                <input type="text" id="grammar" class="text-box">
             </div>
-            <div class="city-form-input">
-                <label for="area">Area</label>
-                <input type="number" id="area" class="text-box">
+            <div class="word-form-input">
+                <label for="origin">Origin</label>
+                <input type="text" id="origin" class="text-box">
             </div>
-            <div class="city-form-input">
-                <label for="founded">Year Founded</label>
-                <input type="number" id="founded" class="text-box">
+            <div class="word-form-input">
+                <label for="yearCoined">yearCoined</label>
+                <input type="number" id="yearCoined" class="text-box">
             </div>
-            <div class="city-form-input">
+            <div class="word-form-input">
+                <label for="synonyms">Synonyms</label>
+                <input type="text" id="synonyms" class="text-box">
+            </div>
+            <div class="word-form-input">
                 <label for="image">Image</label>
                 <input type="url" id="image" class="text-box">
             </div>
-            <div class="city-form-input">
+            <div class="word-form-input">
                 <input type="submit" id="Submit" class="btn">
             </div>
         </form>
     </div>
 
-    <div class="display">
+    <div class="display-word">
         <!-- <div class="display-name">
             Tbilisi
         </div>
-        <div class="display-realName">
+        <div class="display-definition">
             89898989
         </div>
-        <div class="display-population">
+        <div class="display-Part of Speech">
             999999999999999999
         </div>
-        <div class="display-area">
+        <div class="display-origin">
             999999999999999
         </div>
-        <div class="display-yearFounded">
+        <div class="display-synonyms">
             1
         </div>
         <div class="display-yearsExisting">
@@ -72,4 +76,7 @@
             <p class="btn">Remove</p>
         </div> -->
     </div>
+
+    <script src="index.js"></script>
+<script type="text/javascript" src="main.js"></script></body>
 </html>

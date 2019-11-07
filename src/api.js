@@ -1,4 +1,6 @@
-
+export function test() {
+  console.log(`err`)
+}
 
 const DOMStrings = {
   input: document.getElementById("pkmn-form"),
