@@ -38,25 +38,25 @@ function getPkmn() {
         console.log(thesaurus[0].meta.id)
         console.log(dictionary[0].shortdef);
         console.log(dictionary[0].hwi.prs[0].mw);
-        console.log(dictionary[0].date);
+        console.log(dictionary[0].date.split('{')[0]);
         console.log(thesaurus[0].meta.syns);
         console.log(dictionary[0].fl)
         // console.log(data[1].def[1].sseq[0][1][1].dt[1][1][0].t)
         // DOMStrings.displayName.innerText = data[0].hwi.prs[0].mw;
         DOMStrings.displayName.innerText = thesaurus[0].meta.id;
         DOMStrings.displayNum.innerText = dictionary[0].shortdef;
-        DOMStrings.displayImageFront.src = dictionary[0].fl
-        DOMStrings.displayImageBack.src = data.sprites.back_default;
-        DOMStrings.displayImageShinyBack.src = data.sprites.back_shiny;
+        DOMStrings.displayImageFront.innerText = "", dictionary[0].fl
+        DOMStrings.displayImageBack.innerText = dictionary[0].hwi.prs[0].mw;
+        DOMStrings.displayImageShinyBack.innerText = dictionary[0].date.split('{')[0];
         DOMStrings.displayImageShinyFront.src = data.sprites.front_shiny;
-        DOMStrings.type.textContent = dictionary[0].fl
+        DOMStrings.type.textContent =
         //console.log(data.types);
         console.log(data);
       };
       displayPkmn(dictionary);
       DOMStrings.name.value = "";
     } catch (err) {
-      // DOMStrings.displayName.innerText = `error`
+      DOMStrings.displayName.innerText = `error`
     }
   });
 }
