@@ -1,13 +1,13 @@
 const DOMStrings = {
-    input: document.getElementById("pkmn-form"),
-    name: document.getElementById("pokemon-name"),
-    displayName: document.querySelector(".pkmn-name-size"),
+    input: document.getElementById("word-form"),
+    name: document.getElementById("word-name"),
+    displayName: document.querySelector(".word-name-size"),
     displayImageFront: document.querySelector(".display-image-front-def"),
     displayImageBack: document.querySelector(".display-image-back-def"),
     displayImageShinyFront: document.querySelector(".display-image-shiny-front"),
     displayImageShinyBack: document.querySelector(".display-image-shiny-back"),
     type: document.querySelector(".type"),
-    displayNum: document.querySelector(".pkmn-num")
+    displayNum: document.querySelector(".word-num")
     };
     
     DOMStrings.input.addEventListener("keypress", function(event) {
@@ -17,7 +17,7 @@ const DOMStrings = {
     }
     });
     
-    function getPkmn() {
+    function getWord() {
     DOMStrings.input.addEventListener("submit", async function(e) {
     e.preventDefault();
     try {
@@ -28,7 +28,7 @@ const DOMStrings = {
     const data = await result.json();
     //console.log(data);
     
-    const displayPkmn = function(data) {
+    const displayWord = function(data) {
         console.log(data[0].shortdef)
         console.log(data[0].hwi.prs[0].mw)
         console.log(data[0].date)
@@ -45,7 +45,7 @@ const DOMStrings = {
     console.log(data)
     
     };
-    displayPkmn(data);
+    displayWord(data);
     DOMStrings.name.value = "";
     
     } catch (err) {
@@ -53,7 +53,7 @@ const DOMStrings = {
     }
     });
     }
-    getPkmn();
+    getWord();
 
 // https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=f5a1330a-9bb9-4904-86ee-d1e087a29dcb
 
