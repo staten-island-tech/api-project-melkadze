@@ -1,7 +1,7 @@
 :root{
-	--color-primary: whitesmoke;
-	--color-secondary: #36D1DC;
-	--color-background: #5B86E5;
+	--color-primary: #df8500;
+	--color-secondary: #373B44;
+	--color-background: #4286f4;
 
 }
 
@@ -34,23 +34,46 @@ body{
 	font-family: 'Product Sans';
 }
 
+.wrapper{
+	filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.384));
+}
 .banner{
     text-align: center;
-    margin: 0 auto;
+	margin: 0 auto;
+	padding-top:.75rem;
     color: white;
-    background-color: none;
-    height: 20vh;
-    font-size: 4rem;
+    background-color: var(--color-primary);
+    height: 15vh;
+    font-size: 9rem;
     text-transform: uppercase;
-    letter-spacing: 1rem;
+	letter-spacing: 1rem;
+-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(0 0, 100% 0%, 88% 100%, 0% 100%);
+margin-top:2%;
 }
 
-.user-input{
+.user-search{
 	text-transform: uppercase;
+	color:white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	height:25vh;
+	filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.384));
+}
+
+.user-search-banner{
+	margin-bottom: 2rem;
+	padding-top:1rem;
+	padding-bottom:1rem;
+	text-align: center;
+	background-color: #fe8a71;
+	width: 30vw;
+	height: 8vh;
+	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+
 }
 
 #word-form{
@@ -60,6 +83,7 @@ body{
 	align-items: center;
 	height: 60vh;
 	font-size: 2.2rem;
+	margin-bottom:-20vh;
 }
 
 .word-form-input{
@@ -72,7 +96,7 @@ body{
 	height: 10vh;
 }
 
-.btn, .btn:link, .btn:visited {
+.nes-btn, .nes-btn:link, .nes-btn:visited {
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 1.5rem 4.0rem;
@@ -86,12 +110,12 @@ body{
 	background-color: oldlace;
 }
 
-.btn:hover{
+.nes-btn:hover{
 	transform: translateY(-.3rem);
 	box-shadow: 0 1.0rem 2rem rgba(0,0,0.2);
 }
 	
-.btn:active{
+.nes-btn:active{
 	transform: translateY(-1px);
 	box-shadow: 0 .5rem 1rem rgba(0,0,0.2);
 }
@@ -99,19 +123,25 @@ body{
 .display{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	flex-direction: column;
-}
-
-.display-word{
-	color: var(--color-secondary);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 10rem;
+	color: whitesmoke;
+	height: 60vh;
 	font-size: 2.2rem;
 	width: 100%;
 }
+
+h1 {
+	display: block;
+	text-align: center;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
 
 .display-image img{
 	height: 9rem;
