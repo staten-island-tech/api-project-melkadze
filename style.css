@@ -1,7 +1,7 @@
 :root{
 	--color-primary: whitesmoke;
-	--color-secondary: #36D1DC;
-	--color-background: #5B86E5;
+	--color-secondary: #373B44;
+	--color-background: #4286f4;
 
 }
 
@@ -125,7 +125,7 @@ margin-top:2%;
 	align-items: center;
 	justify-content: space-evenly;
 	flex-direction: column;
-	color: var(--color-secondary);
+	color: whitesmoke;
 	height: 60vh;
 	font-size: 2.2rem;
 	width: 100%;
