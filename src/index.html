@@ -3,80 +3,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dictionary Database</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
-    
+    <title>Dictionary Database</title>
 </head>
 <body>
-    <div class="banner">
-        <h1 class="header">
-            Dictionary Database
-        </h1>
-    </div>
-
-    <div class="user-input">
-        <form id="word-form">
-            <div class="word-form-input">
-                <label for="name">Word</label>
-                <input type="text" id="name" class="text-box">
-            </div>
-            <div class="word-form-input">
-                <label for="definition">Definition</label>
-                <input type="text" id="definition" class="text-box">
-            </div>
-            <div class="word-form-input">
-                <label for="grammar">Part of Speech</label>
-                <input type="text" id="grammar" class="text-box">
-            </div>
-            <div class="word-form-input">
-                <label for="origin">Origin</label>
-                <input type="text" id="origin" class="text-box">
-            </div>
-            <div class="word-form-input">
-                <label for="yearCoined">yearCoined</label>
-                <input type="number" id="yearCoined" class="text-box">
-            </div>
-            <div class="word-form-input">
-                <label for="synonyms">Synonyms</label>
-                <input type="text" id="synonyms" class="text-box">
-            </div>
-            <div class="word-form-input">
-                <label for="image">Image</label>
-                <input type="url" id="image" class="text-box">
-            </div>
-            <div class="word-form-input">
-                <input type="submit" id="Submit" class="btn">
+    <div class="wrapper">
+        <h1 class="banner">Dictionary Database</h1>
+        <form id = "word-form" class="user-input">
+            <div class="user-search">
+                <h2 class="user-search-banner">Search for a Word</h2>
+                <textarea id="word-name" class="nes-textarea" placeholder="Search for a Word"></textarea>
+                <div>
+                    <input type="submit" value="Submit" class="nes-btn">
+                </div>
             </div>
         </form>
-    </div>
+        <div class="display">
+            <div class="display-word">
+               <h1 class="word-name-size"> WORD </h1>
+               <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
+            </div>
+            <div class="display-definition">
+                <h1>DEFINITION</h1>
+                <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
 
-    <div class="display-word">
-        <!-- <div class="display-name">
-            Tbilisi
+            </div>
+            <div class="display-origin">
+                <h1>ORIGIN</h1>
+                <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
+            </div>
+            <div class="display-PartofSpeech">
+                <h1>PART OF SPEECH</h1>
+                <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
+            </div>
+                
+            <div class="display-image-banner">
+                <img src="" alt="" class="display-image-front-def">
+                <img src="" alt="" class="display-image-back-def">
+                <img src="" alt="" class="display-image-shiny-front">
+                <img src="" alt="" class="display-image-shiny-back">
+            </div>
         </div>
-        <div class="display-definition">
-            89898989
-        </div>
-        <div class="display-Part of Speech">
-            999999999999999999
-        </div>
-        <div class="display-origin">
-            999999999999999
-        </div>
-        <div class="display-synonyms">
-            1
-        </div>
-        <div class="display-yearsExisting">
-            1+
-        </div>
-        <div class="display-image">
-            <image src="https://pbs.twimg.com/media/CoQHjUyXgAACsMZ.jpg">
-        </div>
-        <div class="display-button">
-            <p class="btn">Remove</p>
-        </div> -->
+        
     </div>
+    
 
-    <script src="index.js"></script>
+
+   <script src="api.js"></script>
 </body>
 </html>
