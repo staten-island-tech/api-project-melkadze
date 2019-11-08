@@ -41,20 +41,24 @@ function getPkmn() {
 
       const displayPkmn = function(data) {
         console.log(dictionary[0]);
-        console.log(thesaurus[0].meta.id)
+        console.log(dictionary[0].meta.id.split(':'))
         console.log(dictionary[0].shortdef);
         console.log(dictionary[0].hwi.prs[0].mw);
         console.log(dictionary[0].date.split('{')[0]);
-        console.log(thesaurus[0].meta.syns);
         console.log(dictionary[0].fl)
         // console.log(data[1].def[1].sseq[0][1][1].dt[1][1][0].t)
         // DOMStrings.displayName.innerText = data[0].hwi.prs[0].mw;
-        DOMStrings.displayName.innerText = thesaurus[0].meta.id;
+        DOMStrings.displayName.innerText = dictionary[0].meta.id.split(':');
         DOMStrings.displayNum.innerText = dictionary[0].shortdef;
         DOMStrings.displayImageFront.innerText = dictionary[0].fl
         DOMStrings.displayImageBack.innerText = dictionary[0].hwi.prs[0].mw;
         DOMStrings.displayImageShinyBack.innerText = dictionary[0].date.split('{')[0];
-        DOMStrings.displayImageShinyFront.innerText = thesaurus[0].meta.syns
+        try {
+          DOMStrings.displayImageShinyFront.innerText = thesaurus[0].meta.syns
+        }
+        catch (err) {
+          DOMStrings.displayImageShinyFront.innerText = "No synonyms"
+        }
         // DOMStrings.type.textContent =
         //console.log(data.types);
         // console.log(data);
@@ -62,7 +66,7 @@ function getPkmn() {
       displayPkmn(dictionary);
       DOMStrings.name.value = "";
     } catch (err) {
-      DOMStrings.displayName.innerText ="error"
+      DOMStrings.displayName.innerText = err
     }
   });
 }
