@@ -21,6 +21,12 @@ function getPkmn() {
   DOMStrings.input.addEventListener("submit", async function(e) {
     e.preventDefault();
     try {
+      DOMStrings.displayName.innerText = "";
+        DOMStrings.displayNum.innerText = "";
+        DOMStrings.displayImageFront.innerText = "";
+        DOMStrings.displayImageBack.innerText = "";
+        DOMStrings.displayImageShinyBack.innerText = "";
+        DOMStrings.displayImageShinyFront.innerText = "";
       const dictResult = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${DOMStrings.name.value}?key=f5a1330a-9bb9-4904-86ee-d1e087a29dcb`
       );
@@ -45,18 +51,18 @@ function getPkmn() {
         // DOMStrings.displayName.innerText = data[0].hwi.prs[0].mw;
         DOMStrings.displayName.innerText = thesaurus[0].meta.id;
         DOMStrings.displayNum.innerText = dictionary[0].shortdef;
-        DOMStrings.displayImageFront.innerText = "", dictionary[0].fl
+        DOMStrings.displayImageFront.innerText = dictionary[0].fl
         DOMStrings.displayImageBack.innerText = dictionary[0].hwi.prs[0].mw;
         DOMStrings.displayImageShinyBack.innerText = dictionary[0].date.split('{')[0];
-        DOMStrings.displayImageShinyFront.src = data.sprites.front_shiny;
-        DOMStrings.type.textContent =
+        DOMStrings.displayImageShinyFront.innerText = thesaurus[0].meta.syns
+        // DOMStrings.type.textContent =
         //console.log(data.types);
-        console.log(data);
+        // console.log(data);
       };
       displayPkmn(dictionary);
       DOMStrings.name.value = "";
     } catch (err) {
-      DOMStrings.displayName.innerText = `error`
+      DOMStrings.displayName.innerText ="error"
     }
   });
 }
