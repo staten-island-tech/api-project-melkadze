@@ -177,7 +177,7 @@ body {
   .nes-textarea {
     width: 75%;
     height: 50vh;
-    font-size: 10vh;
+    font-size: 3vh;
     border-radius: 0.5rem;
   }
 }
