@@ -1,55 +1,52 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
     <title>Dictionary Database</title>
 </head>
+
 <body>
     <div class="wrapper">
         <h1 class="banner">Dictionary Database</h1>
-        <form id = "word-form" class="user-input">
+        <form id="word-form" class="user-input">
             <div class="user-search">
                 <h2 class="user-search-banner">Search for a Word</h2>
-                <textarea id="word-name" class="nes-textarea" placeholder="Search for a Word"></textarea>
+                <textarea id="word-input" class="nes-textarea" placeholder="Search for a Word"></textarea>
                 <div>
                     <input type="submit" value="Submit" class="nes-btn">
                 </div>
             </div>
         </form>
         <div class="display">
-            <div class="display-word">
-               <h1 class="word-name-size"> WORD </h1>
-               <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
+            <div>
+                <h1 class="word-name-size"> WORD </h1>
+                <p id="display-word"></p>
             </div>
-            <div class="display-definition">
+            <div>
                 <h1>DEFINITION</h1>
-                <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
-
+                <p id="display-definition"></p>
             </div>
-            <div class="display-origin">
+            <div>
                 <h1>ORIGIN</h1>
-                <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
+                <p id="display-origin"></p>
             </div>
-            <div class="display-PartofSpeech">
+            <div>
                 <h1>PART OF SPEECH</h1>
-                <p>hgior gritrrt oi rtoihjetoih jrj rt rt yerthet hjrw erthriuthgr ogij ewr wrthrhtrhgrwoh  rtirhrth.</p>
+                <p id="display-part"></p>
             </div>
-                
-            <div class="display-image-banner">
-                <img src="" alt="" class="display-image-front-def">
-                <img src="" alt="" class="display-image-back-def">
-                <img src="" alt="" class="display-image-shiny-front">
-                <img src="" alt="" class="display-image-shiny-back">
+            <div>
+                <h1>PRONUNCIATION</h1>
+                <p id="display-pronunciation"></p>
+            </div>
+            <div>
+                <h1>SYNONYMS</h1>
+                <p id="display-synonyms"></p>
             </div>
         </div>
-        
     </div>
-    
-
-
-   <script src="api.js"></script>
 </body>
+
 </html>

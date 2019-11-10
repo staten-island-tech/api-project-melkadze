@@ -1,10 +1,10 @@
-import { test } from './api';
-
-test();
+import { getWordInfo , DOMStrings } from './api';
 
 
+
+/*
 //word class
-class  Word {
+class Word {
     constructor(name, definition, grammar, origin, yearCoined, synonyms, url){
         this.name = name;
         this.definition = definition;
@@ -19,8 +19,6 @@ class  Word {
         return new Date().getUTCFullYear() - yearCoined;
     }
 }
-
-
 
 //UI section: displaying & removing cities, and clearing fields
 class UI {
@@ -89,3 +87,17 @@ document.querySelector('.display-word').addEventListener('click', function(e){
 
     e.preventDefault();
 })
+
+*/
+
+//import:::api
+
+DOMStrings.input.addEventListener("keypress", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector(".nes-btn").click();
+  }
+});
+
+
+getWordInfo();
