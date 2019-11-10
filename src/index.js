@@ -8,12 +8,3 @@ DOMStrings.input.addEventListener("keypress", function(event) {
 });
 
 getWordInfo();
-
-
-/*
-list of points:
-
-4. Boolean logic is used to prevent users from inputting blank fields
-7. Project is hosted on Netlify or Heroku(Adam, Carlo, Andrew)
-
-*/

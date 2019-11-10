@@ -10,7 +10,13 @@ export const DOMStrings = {
   origin: document.getElementById("display-origin"),
   partOfSpeech: document.getElementById("display-part"),
   pronunciation: document.getElementById("display-pronunciation"),
-  synonyms: document.getElementById("display-synonyms")
+  synonyms: document.getElementById("display-synonyms"),
+  wordHead: document.getElementById("display-head-word"),
+  definitionHead: document.getElementById("display-head-definition"),
+  originHead: document.getElementById("display-head-origin"),
+  partOfSpeechHead: document.getElementById("display-head-part"),
+  pronunciationHead: document.getElementById("display-head-pronunciation"),
+  synonymsHead: document.getElementById("display-head-synonyms")
 };
 
 export function getWordInfo() {
@@ -25,10 +31,21 @@ export function getWordInfo() {
     try {
       DOMStrings.word.innerText = "";
       DOMStrings.definition.innerText = "";
+      DOMStrings.definition1.innerText = "";
+      DOMStrings.definition2.innerText = "";
+      DOMStrings.definition3.innerText = "";
+      DOMStrings.definition4.innerText = "";
       DOMStrings.origin.innerText = "";
       DOMStrings.partOfSpeech.innerText = "";
       DOMStrings.pronunciation.innerText = "";
       DOMStrings.synonyms.innerText = "";
+      
+      DOMStrings.wordHead.innerText = "";
+      DOMStrings.definitionHead.innerText = "";
+      DOMStrings.originHead.innerText = "";
+      DOMStrings.partOfSpeechHead.innerText = "";
+      DOMStrings.pronunciationHead.innerText = "";
+      DOMStrings.synonymsHead.innerText = "";
 
       const dictResult = await fetch(
         `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${DOMStrings.inputWord.value}?key=f5a1330a-9bb9-4904-86ee-d1e087a29dcb`
@@ -41,19 +58,24 @@ export function getWordInfo() {
       const thesaurus = await thesResult.json();
 
       const displayWord = function() {
+        DOMStrings.wordHead.innerText = 'WORD';
         DOMStrings.word.innerText = dictionary[0].meta.id
           .split(":")[0]
           .split(",")[0];
-          console.log(DOMStrings.definition.innerText = dictionary[0].shortdef)
         DOMStrings.definition.innerText = dictionary[0].shortdef[0];
         //the following is to deal with multiple definitions (no for loop as all unique names)
         if (dictionary[0].shortdef[1]) {DOMStrings.definition1.innerText = dictionary[0].shortdef[1]}
         if (dictionary[0].shortdef[2]) {DOMStrings.definition2.innerText = dictionary[0].shortdef[2]}
         if (dictionary[0].shortdef[3]) {DOMStrings.definition3.innerText = dictionary[0].shortdef[3]}
         if (dictionary[0].shortdef[4]) {DOMStrings.definition4.innerText = dictionary[0].shortdef[4]}
+        DOMStrings.definitionHead.innerText = 'DEFINITION';
         DOMStrings.origin.innerText = dictionary[0].date.split("{")[0];
+        DOMStrings.originHead.innerText = 'ORIGIN';
         DOMStrings.partOfSpeech.innerText = dictionary[0].fl;
+        DOMStrings.partOfSpeechHead.innerText = 'PART OF SPEECH';
         DOMStrings.pronunciation.innerText = dictionary[0].hwi.prs[0].mw;
+        DOMStrings.pronunciationHead.innerText = 'PRONUNCIATION';
+        DOMStrings.synonymsHead.innerText = 'SYNOYNMS';
         try {
           DOMStrings.synonyms.innerText = thesaurus[0].meta.syns;
         } catch (err) {
@@ -65,8 +87,9 @@ export function getWordInfo() {
 
       DOMStrings.inputWord.value = "";
     } catch (err) {
-      DOMStrings.word.innerText = `ERROR: Not all info found for word '${DOMStrings.inputWord.value}'.`;
+      DOMStrings.word.innerText = `ERROR: Not all required information could be found for word '${DOMStrings.inputWord.value}'.`;
       console.log(`[GetWordInfo] Error description: ${err}`);
+      DOMStrings.inputWord.value = "";
     }
   });
 }
