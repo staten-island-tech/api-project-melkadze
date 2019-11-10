@@ -38,7 +38,7 @@ body {
   color: white;
   background-color: #fe8a71;
   height: 15vh;
-  font-size: 9rem;
+  font-size: 6vh;
   text-transform: uppercase;
   letter-spacing: 1rem;
   -webkit-clip-path: polygon(
@@ -129,7 +129,8 @@ body {
   flex-direction: column;
   color: whitesmoke;
   font-size: 2.2rem;
-  width: 100%;
+  width: 80%;
+  margin: auto;
   margin-bottom: 10rem;
 }
 
@@ -141,25 +142,19 @@ body {
   display: block;
   text-align: center;
   font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
   font-weight: bold;
-}
-
-.display-image img {
-  height: 9rem;
 }
 
 .nes-textarea {
   font-family: "Sriracha", cursive;
   width: 40%;
-  height: 10rem;
-  font-size: 5rem;
+  height: 5vw;
+  font-size: 3vw;
   background-color: lightblue;
   border-radius: 1rem;
   text-align: center;
   text-transform: uppercase;
+  align-content: center;
   color: #fe8a71;
+  overflow: hidden;
 }
