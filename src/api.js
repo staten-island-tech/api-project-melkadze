@@ -24,7 +24,7 @@ export function getWordInfo() {
     e.preventDefault();
 
     if (DOMStrings.inputWord.value == "") {
-      alert('Input a word, please.');
+      alert("Input a word, please.");
       location.reload();
     }
 
@@ -39,7 +39,7 @@ export function getWordInfo() {
       DOMStrings.partOfSpeech.innerText = "";
       DOMStrings.pronunciation.innerText = "";
       DOMStrings.synonyms.innerText = "";
-      
+
       DOMStrings.wordHead.innerText = "";
       DOMStrings.definitionHead.innerText = "";
       DOMStrings.originHead.innerText = "";
@@ -58,28 +58,48 @@ export function getWordInfo() {
       const thesaurus = await thesResult.json();
 
       const displayWord = function() {
-        DOMStrings.wordHead.innerText = 'WORD';
+        DOMStrings.wordHead.innerText = "WORD";
         DOMStrings.word.innerText = dictionary[0].meta.id
           .split(":")[0]
           .split(",")[0];
-        DOMStrings.definition.innerText = dictionary[0].shortdef[0];
+        DOMStrings.definition.innerText = `1. ${dictionary[0].shortdef[0]}`;
         //the following is to deal with multiple definitions (no for loop as all unique names)
-        if (dictionary[0].shortdef[1]) {DOMStrings.definition1.innerText = dictionary[0].shortdef[1]}
-        if (dictionary[0].shortdef[2]) {DOMStrings.definition2.innerText = dictionary[0].shortdef[2]}
-        if (dictionary[0].shortdef[3]) {DOMStrings.definition3.innerText = dictionary[0].shortdef[3]}
-        if (dictionary[0].shortdef[4]) {DOMStrings.definition4.innerText = dictionary[0].shortdef[4]}
-        DOMStrings.definitionHead.innerText = 'DEFINITION';
+        if (dictionary[0].shortdef[1]) {
+          DOMStrings.definition1.innerText = `2. ${dictionary[0].shortdef[1]}`;
+        }
+        if (dictionary[0].shortdef[2]) {
+          DOMStrings.definition2.innerText = `3. ${dictionary[0].shortdef[2]}`;
+        }
+        if (dictionary[0].shortdef[3]) {
+          DOMStrings.definition3.innerText = `4. ${dictionary[0].shortdef[3]}`;
+        }
+        if (dictionary[0].shortdef[4]) {
+          DOMStrings.definition4.innerText = `5. ${dictionary[0].shortdef[4]}`;
+        }
+        DOMStrings.definitionHead.innerText = "DEFINITION";
         DOMStrings.origin.innerText = dictionary[0].date.split("{")[0];
-        DOMStrings.originHead.innerText = 'ORIGIN';
+        DOMStrings.originHead.innerText = "ORIGIN";
         DOMStrings.partOfSpeech.innerText = dictionary[0].fl;
-        DOMStrings.partOfSpeechHead.innerText = 'PART OF SPEECH';
+        DOMStrings.partOfSpeechHead.innerText = "PART OF SPEECH";
         DOMStrings.pronunciation.innerText = dictionary[0].hwi.prs[0].mw;
-        DOMStrings.pronunciationHead.innerText = 'PRONUNCIATION';
-        DOMStrings.synonymsHead.innerText = 'SYNOYNMS';
+        DOMStrings.pronunciationHead.innerText = "PRONUNCIATION";
+        DOMStrings.synonymsHead.innerText = "SYNOYNMS";
+        //printout all of the synonyms with spaces in between the commas, if any exist
         try {
-          DOMStrings.synonyms.innerText = thesaurus[0].meta.syns;
+          let synonymsPrintout = "";
+          for (let i = 0; i < thesaurus[0].meta.syns.length; i++) {
+            for (let j = 0; j < thesaurus[0].meta.syns[i].length; j++) {
+              if (synonymsPrintout === "") {
+                synonymsPrintout = thesaurus[0].meta.syns[i][j];
+              } else {
+                synonymsPrintout = `${synonymsPrintout}, ${thesaurus[0].meta.syns[i][j]}`;
+              }
+            }
+          }
+          DOMStrings.synonyms.innerText = synonymsPrintout;
         } catch (err) {
-          DOMStrings.synonyms.innerText = "No synonyms";
+          console.log(err);
+          DOMStrings.synonyms.innerText = "No synonyms found";
         }
       };
 
