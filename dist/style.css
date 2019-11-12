@@ -163,7 +163,7 @@ body {
 
 @media only screen and (max-width: 1080px) and (orientation: portrait) {
   .user-search {
-    height: 20vh;
+    height: 35vh;
   }
 
   .banner {
