@@ -162,6 +162,10 @@ body {
 
 
 @media only screen and (max-width: 1080px) and (orientation: portrait) {
+  .user-search {
+    height: 30vh;
+  }
+
   .banner {
     font-size: 5vh;
   }
@@ -176,7 +180,7 @@ body {
   
   .nes-textarea {
     width: 75%;
-    height: 120vh;
+    height: 30vh;
     font-size: 3vh;
     border-radius: 0.5rem;
   }
